@@ -1,0 +1,21 @@
+﻿@using ASP.NETSaturdayProject.Models
+@model Food
+
+
+<div class="container">
+    <h1>Insert Food</h1>
+
+    @using (Html.BeginForm("InsertFood", "Food", FormMethod.Post, new { Class = "form-group container" }))
+    {
+        @Html.TextBoxFor(a => a.name, new { Class = "form-control mt-2", PlaceHolder = "Enter Food Name" })
+        @Html.ValidationMessageFor(a => a.name, "", new { Class = "text-danger" })
+        @Html.TextBoxFor(a => a.cuisine, new { Class = "form-control mt-2", PlaceHolder = "Enter Food Cuissine" })
+        @Html.ValidationMessageFor(a => a.cuisine, "", new { Class = "text-danger" })
+        @Html.TextBoxFor(a => a.price, new { Class = "form-control mt-2", PlaceHolder = "Enter Food Price" })
+        @Html.ValidationMessageFor(a => a.price, "", new { Class = "text-danger" })
+        @Html.TextBoxFor(a => a.Quantity, new { Class = "form-control mt-2", PlaceHolder = "Enter Food Quantity" })
+        @Html.ValidationMessageFor(a => a.Quantity, "", new { Class = "text-danger" })
+        <input type="submit" class="form-control btn btn-dark mt-2" />
+    }
+</div>
+
