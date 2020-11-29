@@ -90,6 +90,16 @@ namespace ASP.NETSaturdayProject.Controllers
             return View("VDAView", GetFoodData());
         }
 
+        public ActionResult UpdateFoodVDA(Food f)
+        {
+            SqlCommand cmd = new SqlCommand("update TBLFoods SET Name = '" + f.name + "', Cuisine = '" + f.cuisine + "', Price = " + f.price + ", Quantity = " + f.Quantity + " WHERE ID = " + f.id, con);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+            return View("VDAView", GetFoodData());
+        }
+
         public ActionResult Sorting(sorting s)
         {
             List<Food> foods = GetFoodData();
